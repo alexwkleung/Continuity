@@ -1,0 +1,33 @@
+{
+  "name": "continuity",
+  "version": "1.0.0",
+  "description": "Create a resume using Markdown and CSS",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc --build --clean && npx tsc --build",
+    "resume": "npx tsc --build --clean && npx tsc --build && node dist/util/resume-util.js",
+    "server": "nodemon util/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexwkleung/Continuity.git"
+  },
+  "author": "alexwkleung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexwkleung/Continuity/issues"
+  },
+  "homepage": "https://github.com/alexwkleung/Continuity#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.11",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "eva-st-util": "github:alexwkleung/Eva-ST-Util",
+    "puppeteer": "^19.9.1"
+  }
+}
