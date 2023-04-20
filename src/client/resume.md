@@ -1,6 +1,6 @@
 # Your Name
 
-#### email@domain.com | github.com | linkedin.com | personal-website.com 
+#### email@domain.com | github.com | linkedin.com | portfolio-website.com 
 
 --- 
 

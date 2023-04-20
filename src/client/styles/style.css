@@ -44,7 +44,7 @@ h1, h2, h3, h5, h6 {
     color: black; 
     font-family: 'Inter-Bold', sans-serif;
     /* text-decoration: underline; */
-    padding-left: 24px;
+    padding-left: 23px;
 }
 
 h1 {
@@ -89,7 +89,7 @@ strong {
     color: black;
     font-size: 12px;
     font-family: 'Inter-Bold', sans-serif;
-    padding-left: 5px;
+    padding-left: 3.5px;
 }
 
 em {
