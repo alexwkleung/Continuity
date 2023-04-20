@@ -15,7 +15,7 @@ class ResumeUtil {
                 //console.log(EvaSTUtil.MDtoHTML_ST(data));
                 
                 //call appendToHtmlFile function with the stylesheet template literal and converted markdown as arguments
-                this.appendToHtmlFile(`<link rel="stylesheet" href="../styles/style.css">` + '\n' + EvaSTUtil.MDtoHTML_ST(data));
+                this.appendToHtmlFile(`<link rel="stylesheet" href="../styles/style.css">` + '\n' + `<div>` + EvaSTUtil.MDtoHTML_ST(data)) + `</div>`;
             }
         });
     }
@@ -31,7 +31,7 @@ class ResumeUtil {
         });
     }
 
-    private async exportToPdf(pdfFormat: PaperFormat | undefined): Promise<void> {
+    private async exportToPdf(pdfFormat: PaperFormat | undefined, pdfOutPath: string | undefined): Promise<void> {
         //launch puppeteer browser instance
         const browser = await puppeteer.launch({
             headless: true
@@ -56,7 +56,7 @@ class ResumeUtil {
         //create resume.pdf from current browser content
         const pdf = await page.pdf({
             format: pdfFormat,
-            path: 'src/client/output-pdf/resume.pdf'
+            path: pdfOutPath
         });
 
         //close puppeteer browser instance
@@ -67,15 +67,15 @@ class ResumeUtil {
      * invoke function
      * 
      * @access public
-     * @async
-     * @param format paper size for pdf export (options: `'letter'`, `'a4'`)
+     * @param pdfFormat paper size for pdf export (options: `'letter'`, `'a4'`)
+     * @param pdfOutPath path to save pdf output
      */
-    public async invoke(format: PaperFormat | undefined): Promise<void> {
+    public invoke(pdfFormat: PaperFormat | undefined, pdfOutPath: string | undefined) {
         //call parseMarkdownFile function
         this.parseMarkdownFile();
 
         //call exportToPDF function
-        this.exportToPdf(format);
+        this.exportToPdf(pdfFormat, pdfOutPath);
     }
 }
 
@@ -83,4 +83,7 @@ class ResumeUtil {
 const resumeUtil = new ResumeUtil();
 
 //call invoke function
-resumeUtil.invoke('letter');
+resumeUtil.invoke(
+    'letter', 
+    'src/client/output-pdf/resume.pdf'
+);

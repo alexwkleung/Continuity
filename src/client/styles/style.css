@@ -9,7 +9,7 @@
 }
 
 body { 
-    background-color: white;
+    background-color: black;
     /* standard US size (8.5x11 aka Letter) */
     width: 850px;
     height: 1100px;
@@ -20,6 +20,10 @@ body {
     height: 1170px;
     */
     margin: 0 auto; /*center the body */
+}
+
+div {
+    background-color: white;
 }
 
 p {

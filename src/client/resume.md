@@ -50,19 +50,19 @@
 
 ## Projects
 
-**Project 1** | *github.com*
+**Project 1** | github.com
 
 - ...
 
 - ...
 
-**Project 2** | *github.com*
+**Project 2** | github.com
 
 - ...
 
 - ...
 
-**Project 3** | *github.com*
+**Project 3** | github.com
 
 - ...
 
