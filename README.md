@@ -1,10 +1,16 @@
-<h1 align=center>📝 Continuity</h1>
+<h1 align="center">📝 Continuity</h1>
 
-![resume]()
+<p align="center">
+<img src="./screenshots/resume.png">
+</p>
 
-Create a resume using Markdown and CSS. 
+<p align="center">
+Create a resume using Markdown and CSS.
+</p>
 
+<p align="center">
 Just fill in the template, run the script, and you'll have a simple resume in PDF format ready to go!
+</p>
 
 # Table of Contents
 
@@ -12,15 +18,17 @@ Just fill in the template, run the script, and you'll have a simple resume in PD
 
 2. [Usage](#usage)
 
-3. [Contributions](#contributions)
+3. [Frequently Asked Questions](#frequently-asked-questions)
 
-4. [License](#license)
+4. [Contributions](#contributions)
+
+5. [License](#license)
 
 # Installation 
 
 1. Install [Node.js](https://nodejs.org/en/download).
 
-2. Clone the repository or download the [latest release]().
+2. Clone the repository or download the [latest release](https://github.com/alexwkleung/Continuity/releases).
 
 ```bash
 git clone <SSH/HTTPS URL>
@@ -57,8 +65,6 @@ make resume
 
 5. If you want to preview the HTML version of the resume, you can run the following scripts to open the server. Alternatively, you can just open `resume.html` located in the `src/client/output-html` directory if you don't want to use the server. 
 
-**Note:** The HTML version may not be visually identical to the generated PDF due to formatting differences caused by the conversion.
-
 ```bash
 # compile
 npm run resume
@@ -73,6 +79,131 @@ make resume
 npm run server
 # or
 make server
+```
+
+# Frequently Asked Questions
+
+The FAQ will be updated as needed.
+
+1. **Q:** Why does the HTML version of the resume look different?
+
+    **A:** The HTML version may not be visually identical to the generated PDF due to formatting differences caused by the conversion done by Puppeteer.
+
+2. **Q:** I want to use A4 size instead of Letter. How do I change it?
+
+    **A:** For those that prefer A4 size, you will need to make the following modifications:
+
+In `resume-util.ts` (located in `src/server/util`):
+
+```typescript
+//CHANGE
+resumeUtil.invoke(
+    'letter', 
+    'src/client/output-pdf/resume.pdf'
+);
+
+//TO
+resumeUtil.invoke(
+    'A4', 
+    'src/client/output-pdf/resume.pdf'
+);
+```
+
+In `style.css` (located in `src/client/styles`):
+
+```css
+/* CHANGE (body) */
+body { 
+    background-color: white;
+    /* standard US size (8.5x11 aka Letter) */
+    width: 850px;
+    height: 1100px;
+
+    /* standard international size (8.27x11.7 aka A4) */
+    /*
+    width: 827px;
+    height: 1170px;
+    */
+    margin: 0 auto; /* center the body */
+}
+
+/* CHANGE (hr) */
+hr {
+    /* optional: change border to black */
+    /* 
+    border-color: black; 
+    */
+
+    /* Letter */
+    width: 820px;
+
+    /* A4 */
+    /*
+    width: 800px; 
+    */
+
+    /* A4 alternative */
+    /*
+    width: 795px;
+    */
+}
+
+/* TO (body) */
+body { 
+    background-color: white;
+    /* standard US size (8.5x11 aka Letter) */
+    /*
+    width: 850px;
+    height: 1100px;
+    */
+
+    /* standard international size (8.27x11.7 aka A4) */
+    width: 827px;
+    height: 1170px;
+    margin: 0 auto; /* center the body */
+}
+
+/* TO (hr) */
+hr {
+    /* optional: change border to black */
+    /* 
+    border-color: black; 
+    */
+
+    /* Letter */
+    /*
+    width: 820px;
+    */
+
+    /* A4 */
+    width: 800px; 
+
+    /* A4 alternative */
+    /*
+    width: 795px;
+    */
+}
+
+/* or TO (hr alternative) */
+hr {
+    /* optional: change border to black */
+    /* 
+    border-color: black; 
+    */
+
+    /* Letter */
+    /*
+    width: 820px;
+    */
+
+    /* A4 */
+    /*
+    width: 800px; 
+    */
+
+    /* A4 alternative */
+    width: 795px;
+}
 ```
 
 # Contributions

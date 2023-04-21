@@ -19,7 +19,7 @@ body {
     width: 827px;
     height: 1170px;
     */
-    margin: 0 auto; /*center the body */
+    margin: 0 auto; /* center the body */
 }
 
 div {
@@ -47,7 +47,6 @@ mark {
 h1, h2, h3, h5, h6 {
     color: black; 
     font-family: 'Inter-Bold', sans-serif;
-    /* text-decoration: underline; */
     padding-left: 23px;
 }
 
@@ -101,5 +100,21 @@ em {
 }
 
 hr {
+    /* optional: change border to black */
+    /* 
+    border-color: black; 
+    */
+
+    /* Letter */
     width: 820px;
+
+    /* A4 */
+    /*
+    width: 800px; 
+    */
+
+    /* A4 alternative */
+    /*
+    width: 795px;
+    */
 }
