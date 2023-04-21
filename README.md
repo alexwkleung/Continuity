@@ -2,6 +2,10 @@
 
 ![resume]()
 
+Create a resume using Markdown and CSS. 
+
+Just fill in the template, run the script, and you'll have a simple resume in PDF format ready to go!
+
 # Table of Contents
 
 1. [Installation](#installation)
@@ -51,7 +55,9 @@ make resume
 
 4. The generated resume PDF (`resume.pdf`) will be located in the `src/client/output-pdf` directory.
 
-5. If you want to preview the HTML version of the resume, you can run the following scripts to open the server. Note that the HTML version is not identical to the generated PDF due to formatting differences. Alternatively, you can just open `resume.html` located in the `src/client/output-html` directory if you don't want to use the server.
+5. If you want to preview the HTML version of the resume, you can run the following scripts to open the server. Alternatively, you can just open `resume.html` located in the `src/client/output-html` directory if you don't want to use the server. 
+
+**Note:** The HTML version may not be visually identical to the generated PDF due to formatting differences caused by the conversion.
 
 ```bash
 # compile

@@ -72,7 +72,7 @@ class ResumeUtil {
      * @param pdfFormat paper size for pdf export (options: `'letter'`, `'a4'`)
      * @param pdfOutPath path to save pdf output
      */
-    public invoke(pdfFormat: PaperFormat | undefined, pdfOutPath: string | undefined) {
+    public invoke(pdfFormat: PaperFormat | undefined, pdfOutPath: string | undefined): void {
         //call parseMarkdownFile function
         this.parseMarkdownFile();
 
