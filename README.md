@@ -111,6 +111,8 @@ resumeUtil.invoke(
 
 In `style.css` (located in `src/client/styles`):
 
+CHANGE
+
 ```css
 /* CHANGE (body) */
 body { 
@@ -147,7 +149,11 @@ hr {
     width: 795px;
     */
 }
+```
 
+TO
+
+```css
 /* TO (body) */
 body { 
     background-color: white;
