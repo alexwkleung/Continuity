@@ -66,6 +66,8 @@ class ResumeUtil {
     /**
      * invoke function
      * 
+     * Calls `parseMarkdownFile` and `exportToPdf` functions. Arguments passed into `invoke` will also be passed into `exportToPdf`.
+     * 
      * @access public
      * @param pdfFormat paper size for pdf export (options: `'letter'`, `'a4'`)
      * @param pdfOutPath path to save pdf output
