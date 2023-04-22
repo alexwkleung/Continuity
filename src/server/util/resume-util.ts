@@ -10,10 +10,7 @@ export class ResumeUtil {
             if(error) {
                 //output exception message
                 console.error(error);
-            } else {
-                //log the conversion of markdown content to html elements
-                //console.log(EvaSTUtil.MDtoHTML_ST(data));
-                
+            } else {                
                 //call appendToHtmlFile function with the stylesheet template literal and converted markdown as arguments
                 this.appendToHtmlFile(htmlPath, `<link rel="stylesheet" href="../styles/style.css">` + '\n' + `<div>` + EvaSTUtil.MDtoHTML_ST(data)) + `</div>`;
             }
