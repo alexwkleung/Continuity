@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc --build",
-    "resume": "npx tsc --build --clean && npx tsc --build && node dist/util/resume-util.js",
+    "resume": "npx tsc --build --clean && npx tsc --build && node dist/util/create-resume.js",
     "server": "nodemon util/server.js"
   },
   "repository": {
