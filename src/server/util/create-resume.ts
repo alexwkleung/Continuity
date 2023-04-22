@@ -7,6 +7,6 @@ const resumeUtil = new ResumeUtil();
 resumeUtil.invoke(
     'src/client/resume.md',
     'src/client/output-html/resume.html',
-    'letter', 
+    'Letter', 
     'src/client/output-pdf/resume.pdf'
 );

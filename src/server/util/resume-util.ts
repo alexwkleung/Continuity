@@ -3,9 +3,9 @@ import { EvaSTUtil } from 'eva-st-util'
 import puppeteer, { PaperFormat } from 'puppeteer'
 
 export class ResumeUtil {
-    private parseMarkdownFile(markdownResumePath: string, htmlPath: string): void {
+    private parseMarkdownFile(markdownPath: string, htmlPath: string): void {
         //read content from resume.md
-        const readFile: void = fs.readFile(markdownResumePath, 'utf-8', (error, data) => {
+        const readFile = fs.readFile(markdownPath, 'utf-8', (error, data) => {
             //if exception is thrown from fs 
             if(error) {
                 //output exception message
@@ -31,7 +31,7 @@ export class ResumeUtil {
         });
     }
 
-    private async exportToPdf(htmlPath: string, pdfFormat: PaperFormat | undefined, pdfOutPath: string | undefined): Promise<void> {
+    private async exportToPdf(htmlPath: string, pdfFormat: PaperFormat | undefined, pdfPath: string | undefined): Promise<void> {
         //launch puppeteer browser instance
         const browser = await puppeteer.launch({
             headless: true
@@ -56,7 +56,7 @@ export class ResumeUtil {
         //create resume.pdf from current browser content
         const pdf = await page.pdf({
             format: pdfFormat,
-            path: pdfOutPath
+            path: pdfPath
         });
 
         //close puppeteer browser instance
@@ -69,16 +69,22 @@ export class ResumeUtil {
      * Calls `parseMarkdownFile` and `exportToPdf` functions. Arguments passed into `invoke` will be passed into `exportToPdf` and/or `parseMarkdownFile`.
      * 
      * @access public
-     * @param markdownResumePath Path to Markdown file (i.e., `'src/client/resume.md'`)
+     * @param markdownPath Path to Markdown file (i.e., `'src/client/resume.md'`)
      * @param htmlPath Path to HTML file (i.e., `'src/client/output-html/resume.html'`)
-     * @param pdfFormat Paper size for PDF export (options: `'letter'`, `'a4'`)
-     * @param pdfOutPath Path to save PDF output (i.e., `'src/client/output-pdf/resume.pdf'`)
+     * @param pdfFormat Paper size for PDF export (options: `'Letter'`, `'A4'`)
+     * @param pdfPath Path to save PDF output (i.e., `'src/client/output-pdf/resume.pdf'`)
      */
-    public invoke(markdownResumePath: string, htmlPath: string, pdfFormat: PaperFormat | undefined, pdfOutPath: string | undefined): void {
+    public invoke(markdownPath: string, htmlPath: string, pdfFormat: PaperFormat | undefined, pdfPath: string | undefined): void {
         //call parseMarkdownFile function
-        this.parseMarkdownFile(markdownResumePath, htmlPath);
+        this.parseMarkdownFile(markdownPath, htmlPath);
 
-        //call exportToPDF function
-        this.exportToPdf(htmlPath, pdfFormat, pdfOutPath);
+        //check if pdfFormat is Letter or A4
+        if(pdfFormat == 'Letter' || pdfFormat == 'A4') {
+            //call exportToPDF function
+            this.exportToPdf(htmlPath, pdfFormat, pdfPath);
+        } else {
+            //throw unsupported pdf format
+            throw console.error("Unsupported PDF format.");
+        }
     }
 }

@@ -97,7 +97,7 @@ The FAQ will be updated as needed.
 
     **A:** For those that prefer A4 size, you will need to make the following modifications:
 
-In `resume-util.ts` (located in `src/server/util`):
+In `create-resume.ts` (located in `src/server/util`):
 
 CHANGE 
 
@@ -106,7 +106,7 @@ CHANGE
 resumeUtil.invoke(
     'src/client/resume.md',
     'src/client/output-html/resume.html',
-    'letter', 
+    'Letter', 
     'src/client/output-pdf/resume.pdf'
 );
 ```
