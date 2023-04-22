@@ -46,6 +46,14 @@ cd <...>/Continuity
 npm install
 ```
 
+5. Run the build step at least once
+
+```bash
+npm run build
+# or 
+make build
+```
+
 # Usage 
 
 1. Edit `resume.md` located in the `src/client` directory. A template skeleton is already created, so you just need to fill it in.
@@ -66,16 +74,12 @@ make resume
 5. If you want to preview the HTML version of the resume, you can run the following scripts to open the server. Alternatively, you can just open `resume.html` located in the `src/client/output-html` directory if you don't want to use the server. 
 
 ```bash
-# compile
+# run one of these scripts first
 npm run resume
-# or 
-npm run build
-# or 
-make build
 # or
 make resume
 
-# run server
+# then run server script
 npm run server
 # or
 make server
