@@ -93,21 +93,31 @@ The FAQ will be updated as needed.
 
     **A:** The HTML version may not be visually identical to the generated PDF due to formatting differences caused by the conversion done by Puppeteer.
 
-2. **Q:** I want to use A4 size instead of Letter. How do I change it?
+2. **Q:** I want to use A4 instead of Letter. How do I change it?
 
     **A:** For those that prefer A4 size, you will need to make the following modifications:
 
 In `resume-util.ts` (located in `src/server/util`):
 
+CHANGE 
+
 ```typescript
 //CHANGE
 resumeUtil.invoke(
+    'src/client/resume.md',
+    'src/client/output-html/resume.html',
     'letter', 
     'src/client/output-pdf/resume.pdf'
 );
+```
 
+TO 
+
+```typescript
 //TO
 resumeUtil.invoke(
+    'src/client/resume.md',
+    'src/client/output-html/resume.html',
     'A4', 
     'src/client/output-pdf/resume.pdf'
 );
@@ -155,7 +165,7 @@ hr {
 }
 ```
 
-TO
+TO 
 
 ```css
 /* TO (body) */
@@ -193,8 +203,27 @@ hr {
     width: 795px;
     */
 }
+```
 
-/* or TO (hr alternative) */
+OR TO
+
+```css
+/* TO (body) */
+body { 
+    background-color: white;
+    /* standard US size (8.5x11 aka Letter) */
+    /*
+    width: 850px;
+    height: 1100px;
+    */
+
+    /* standard international size (8.27x11.7 aka A4) */
+    width: 827px;
+    height: 1170px;
+    margin: 0 auto; /* center the body */
+}
+
+/* TO (hr alternative) */
 hr {
     /* optional: change border to black */
     /* 
