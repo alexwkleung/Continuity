@@ -4,19 +4,19 @@
 
 --- 
 
-## Skills 
-
-**Skill 1:** ...
-
-**Skill 2:** ...
-
---- 
-
 ## Education
 
 **School Name** 
 
 **Credential** *(Year - Year)*
+
+---
+
+## Skills 
+
+**Skill 1:** ...
+
+**Skill 2:** ...
 
 --- 
 
