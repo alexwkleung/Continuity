@@ -245,6 +245,10 @@ hr {
 }
 ```
 
+3. Q: Is it recommended to modify the resume style/theme? Is it good enough to start with?
+
+    A: Personally, I think it's a good starting template out of the box. However, I highly encourage you to modify it if you want to add your own personal touch.
+
 # Contributions
 
 Contributions are welcomed, but is 100% optional.
