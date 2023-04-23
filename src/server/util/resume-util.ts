@@ -3,6 +3,13 @@ import { EvaSTUtil } from 'eva-st-util'
 import puppeteer, { PaperFormat } from 'puppeteer'
 
 export class ResumeUtil {
+    /**
+     * parseMarkdownFile function
+     * 
+     * @access private
+     * @param markdownPath Path to Markdown file
+     * @param htmlPath Path to HTML file
+     */
     private parseMarkdownFile(markdownPath: string, htmlPath: string): void {
         //read content from resume.md
         const readFile = fs.readFile(markdownPath, 'utf-8', (error, data) => {
@@ -17,6 +24,13 @@ export class ResumeUtil {
         });
     }
 
+    /**
+     * appendToHtmlFile function
+     * 
+     * @access private
+     * @param htmlPath Path to HTML file
+     * @param data String containing data
+     */
     private appendToHtmlFile(htmlPath: string, data: string): void {
         //write data to resume.html
         const writeFile = fs.writeFile(htmlPath, data, (error) => {
@@ -28,6 +42,15 @@ export class ResumeUtil {
         });
     }
 
+    /**
+     * exportToPdf function
+     * 
+     * @access private
+     * @async
+     * @param htmlPath Path to HTML file
+     * @param pdfFormat Paper size for PDF export
+     * @param pdfPath Path to PDF file
+     */
     private async exportToPdf(htmlPath: string, pdfFormat: PaperFormat | undefined, pdfPath: string | undefined): Promise<void> {
         //launch puppeteer browser instance
         const browser = await puppeteer.launch({
@@ -60,6 +83,15 @@ export class ResumeUtil {
         await browser.close();
     }
 
+    /**
+     * isPdfFormatValid function
+     * 
+     * Checks if the PDF format is valid. Must use this before calling `exportToPdf`.
+     * 
+     * @access private
+     * @param pdfFormat Paper size for PDF export
+     * @returns `true` or `false`
+     */
     private isPdfFormatValid(pdfFormat: PaperFormat | undefined): boolean {
         //assign false to initial state of isValid
         let isValid = false;
