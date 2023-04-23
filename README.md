@@ -63,7 +63,7 @@ make build
 3. Once you're ready to generate the PDF file, run the script below:
 
 ```bash
-# generate PDF file from markdown skeleton
+# generate PDF file from template
 npm run resume
 # or
 make resume
