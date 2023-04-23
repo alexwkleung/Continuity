@@ -60,10 +60,29 @@ export class ResumeUtil {
         await browser.close();
     }
 
+    private isPdfFormatValid(pdfFormat: PaperFormat | undefined): boolean {
+        //assign false to initial state of isValid
+        let isValid = false;
+
+        //check if pdfFormat is Letter or A4
+        if(pdfFormat == 'Letter' || pdfFormat == 'A4') {
+            //assign true to isValid
+            isValid = true;
+        //if condition is false
+        } else {
+            //assign false to isValid
+            isValid = false;
+        }
+
+        //return isValid
+        return isValid;
+    }
+
     /**
      * invoke function
      * 
-     * Calls `parseMarkdownFile` and `exportToPdf` functions. Arguments passed into `invoke` will be passed into `exportToPdf` and/or `parseMarkdownFile`.
+     * Calls `parseMarkdownFile` and `exportToPdf` functions. Arguments passed into `invoke` 
+     * will be passed into `exportToPdf` and/or `parseMarkdownFile`.
      * 
      * @access public
      * @param markdownPath Path to Markdown file (i.e., `'src/client/resume.md'`)
@@ -75,8 +94,8 @@ export class ResumeUtil {
         //call parseMarkdownFile function
         this.parseMarkdownFile(markdownPath, htmlPath);
 
-        //check if pdfFormat is Letter or A4
-        if(pdfFormat == 'Letter' || pdfFormat == 'A4') {
+        //check if pdfFormat is valid
+        if(this.isPdfFormatValid(pdfFormat)) {
             //call exportToPDF function
             this.exportToPdf(htmlPath, pdfFormat, pdfPath);
         } else {

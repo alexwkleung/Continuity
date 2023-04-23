@@ -26,9 +26,9 @@ Just fill in the template, run the script, and you'll have a simple resume in PD
 
 # Installation 
 
-1. Install [Node.js](https://nodejs.org/en/download).
+1. Install [Node.js](https://nodejs.org/en/download)
 
-2. Clone the repository or download the [latest release](https://github.com/alexwkleung/Continuity/releases).
+2. Clone the repository or download the [latest release](https://github.com/alexwkleung/Continuity/releases)
 
 ```bash
 git clone <SSH/HTTPS URL>
