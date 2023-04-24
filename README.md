@@ -71,7 +71,7 @@ make resume
 
 4. The generated resume PDF (`resume.pdf`) will be located in the `src/client/output-pdf` directory.
 
-5. If you want to preview the HTML version of the resume, you can run the following scripts to open the server. Alternatively, you can just open `resume.html` located in the `src/client/output-html` directory if you don't want to use the server. 
+5. If you want to preview the HTML version of the resume, you can run the following scripts to open the server. Alternatively, you can directly open `resume.html` located in the `src/client/output-html` directory if you don't want to use the server. 
 
 ```bash
 # run one of these scripts first
@@ -140,7 +140,7 @@ body {
     width: 827px;
     height: 1170px;
     */
-    margin: 0 auto; /* center the body */
+    margin: 0 auto;
 }
 
 /* CHANGE (hr) */
@@ -180,7 +180,7 @@ body {
     /* standard international size (8.27x11.7 aka A4) */
     width: 827px;
     height: 1170px;
-    margin: 0 auto; /* center the body */
+    margin: 0 auto;
 }
 
 /* TO (hr) */
@@ -220,7 +220,7 @@ body {
     /* standard international size (8.27x11.7 aka A4) */
     width: 827px;
     height: 1170px;
-    margin: 0 auto; /* center the body */
+    margin: 0 auto;
 }
 
 /* TO (hr alternative) */
