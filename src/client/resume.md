@@ -8,7 +8,7 @@
 
 **School Name** 
 
-**Credential** *(Year - Year)*
+**Credential** (Year - Year)
 
 ---
 
